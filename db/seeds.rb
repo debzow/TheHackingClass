@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+5.times do
+  course = Course.create!(title: Faker::Simpsons.character, description: Faker::Simpsons.location)
+end
+
+30.times do
+  student = Student.create!(name: Faker::Company.name, course_id: rand(1..5))
+end
